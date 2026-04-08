@@ -12,29 +12,9 @@ const rejectCookieButtons = document.querySelectorAll("[data-reject-cookies]");
 const openCookieSettingsButtons = document.querySelectorAll("[data-open-cookie-settings]");
 const COOKIE_CONSENT_KEY = "shahmansouri_cookie_consent_v1";
 const isEnglishPage = document.documentElement.lang.toLowerCase().startsWith("en");
-const collectionImages = [
-    "tappeti-persiani-verona-mobile.jpg",
-    "lavaggio-restauro-tappeti-verona-mobile.jpg",
-    "intarsio-persiano-khatam-mobile.jpg",
-    "Ceramica-Persiana-Verona-mobile.jpg"
-];
 
 if (yearTarget) {
     yearTarget.textContent = new Date().getFullYear();
-}
-
-function applyCollectionImages() {
-    const cards = document.querySelectorAll(".collection-card img");
-
-    cards.forEach((image, index) => {
-        const src = collectionImages[index];
-
-        if (!src) {
-            return;
-        }
-
-        image.src = src;
-    });
 }
 
 function getCookieConsent() {
@@ -112,7 +92,6 @@ function applyCookieConsent(state) {
 }
 
 applyCookieConsent(getCookieConsent());
-applyCollectionImages();
 
 acceptCookieButtons.forEach((button) => {
     button.addEventListener("click", () => {
